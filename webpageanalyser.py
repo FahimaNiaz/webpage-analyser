@@ -16,8 +16,7 @@ def display_output(url):
 	html_content= get_html_content(url)
 	data= parse_html_using_tag(html_content,'p')
 	statistic=get_statistic(data)
-	window['output'].print(statistic)
-	#print(statistic)
+	window['output'].print('\n'.join("{}: {}".format(k, v) for k, v in statistic.items()))
 	
 
 if __name__ == '__main__':
